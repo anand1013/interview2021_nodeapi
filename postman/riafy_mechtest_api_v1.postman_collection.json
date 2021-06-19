@@ -1,0 +1,474 @@
+{
+	"info": {
+		"_postman_id": "a7281508-4107-4d5b-a8d4-2c6d584ad098",
+		"name": "riafy_mechtest_api_v1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Batman\",\r\n    \"password\":\"iambatman\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nodecodechllnge.herokuapp.com/api/v1/login",
+					"protocol": "https",
+					"host": [
+						"nodecodechllnge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Batman\",\r\n    \"password\":\"iambatman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nodecodechllnge.herokuapp.com/api/v1/login",
+							"protocol": "https",
+							"host": [
+								"nodecodechllnge",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e8-w29CaSTVfSCkPN3kgugKg3CUk+o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Jun 2021 10:01:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statuscode\": 200,\n    \"message\": \"login success\",\n    \"data\": {\n        \"user_token\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsImlhdCI6MTYyNDA5Njg5NH0.Iew6GNwag_AsMyO1IRZvB8eeqXTPfGsKX6ckNHRo37hT8HJFs_F9enHPS0gqv-LwPYGts-ZQY2aQdRfy7zXNNw\"\n    }\n}"
+				},
+				{
+					"name": "Invalid_user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"Batman1\",\r\n    \"password\":\"iambatman\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nodecodechllnge.herokuapp.com/api/v1/login",
+							"protocol": "https",
+							"host": [
+								"nodecodechllnge",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "55"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"37-FaDj5DJ7JrIRkz46z+JtVAlEvFQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Jun 2021 11:58:34 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statuscode\": 400,\n    \"message\": \"invalid user\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "getdetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsImlhdCI6MTYyNDA5MzMwMn0.cjNJqJB9KuRKivZFxzMOyo_mKlJ7kym3wtYnE7bsHAAymWp2tPpXyZ-wz-fVLsmRBRmjOWjNTLhUUFkCL_GIzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://nodecodechllnge.herokuapp.com/api/v1/stock/getdetails/5",
+					"protocol": "https",
+					"host": [
+						"nodecodechllnge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stock",
+						"getdetails",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getdetails",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8521/api/v1/stock/getdetails/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8521",
+							"path": [
+								"api",
+								"v1",
+								"stock",
+								"getdetails",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "256"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"100-qxcMgCcHFggb0/CTExtWuDtAY8E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Jun 2021 10:01:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statuscode\": 200,\n    \"message\": \"stock\",\n    \"data\": [\n        {\n            \"id\": 5,\n            \"Name\": \"NDTV\",\n            \"Current Market Price\": 79.8,\n            \"Market Cap\": 514.51,\n            \"Stock P/E\": 7.26,\n            \"Dividend Yield\": 0,\n            \"ROCE %\": 52.92,\n            \"ROE Previous Annum\": 27.17,\n            \"Debt to Equity\": 0.45,\n            \"EPS\": 11,\n            \"Reserves\": 125.88,\n            \"Debt\": 68.27\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjEsImlhdCI6MTYyNDA5MzMwMn0.cjNJqJB9KuRKivZFxzMOyo_mKlJ7kym3wtYnE7bsHAAymWp2tPpXyZ-wz-fVLsmRBRmjOWjNTLhUUFkCL_GIzQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"search\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nodecodechllnge.herokuapp.com/api/v1/stock/search",
+					"protocol": "https",
+					"host": [
+						"nodecodechllnge",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"stock",
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "search",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"co\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8521/api/v1/stock/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8521",
+							"path": [
+								"api",
+								"v1",
+								"stock",
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8c-aXs+B5AASovcf4TYjVcquIvmmv8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Jun 2021 10:00:49 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statuscode\": 200,\n    \"message\": \"stock\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"Name\": \"Coal India\"\n        },\n        {\n            \"id\": 23,\n            \"Name\": \"Welspun Corp\"\n        },\n        {\n            \"id\": 30,\n            \"Name\": \"Polyplex Corpn\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "search_without keyword",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"search\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nodecodechllnge.herokuapp.com/api/v1/stock/search",
+							"protocol": "https",
+							"host": [
+								"nodecodechllnge",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stock",
+								"search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1026"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"402-3hTDnCzo5JtncUCP6uY+Vf6b0+s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 19 Jun 2021 12:03:39 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statuscode\": 200,\n    \"message\": \"stock\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"Name\": \"Bhansali Engg.\"\n        },\n        {\n            \"id\": 2,\n            \"Name\": \"Coal India\"\n        },\n        {\n            \"id\": 3,\n            \"Name\": \"IOL Chemicals\"\n        },\n        {\n            \"id\": 4,\n            \"Name\": \"Dolat Investment\"\n        },\n        {\n            \"id\": 5,\n            \"Name\": \"NDTV\"\n        },\n        {\n            \"id\": 6,\n            \"Name\": \"Balmer Law. Inv.\"\n        },\n        {\n            \"id\": 7,\n            \"Name\": \"Ebixcash World\"\n        },\n        {\n            \"id\": 8,\n            \"Name\": \"Mangalam Organic\"\n        },\n        {\n            \"id\": 9,\n            \"Name\": \"INEOS Styrolut.\"\n        },\n        {\n            \"id\": 10,\n            \"Name\": \"Expleo Solutions\"\n        },\n        {\n            \"id\": 11,\n            \"Name\": \"Sh. Jagdamba Pol\"\n        },\n        {\n            \"id\": 12,\n            \"Name\": \"Godawari Power\"\n        },\n        {\n            \"id\": 13,\n            \"Name\": \"Cigniti Tech.\"\n        },\n        {\n            \"id\": 14,\n            \"Name\": \"Kirl. Ferrous\"\n        },\n        {\n            \"id\": 15,\n            \"Name\": \"Rites\"\n        },\n        {\n            \"id\": 16,\n            \"Name\": \"Guj.St.Petronet\"\n        },\n        {\n            \"id\": 17,\n            \"Name\": \"Ester Industries\"\n        },\n        {\n            \"id\": 18,\n            \"Name\": \"Anjani Portland\"\n        },\n        {\n            \"id\": 19,\n            \"Name\": \"Venky's (India)\"\n        },\n        {\n            \"id\": 20,\n            \"Name\": \"Heritage Foods\"\n        },\n        {\n            \"id\": 21,\n            \"Name\": \"SIS\"\n        },\n        {\n            \"id\": 22,\n            \"Name\": \"GTPL Hathway\"\n        },\n        {\n            \"id\": 23,\n            \"Name\": \"Welspun Corp\"\n        },\n        {\n            \"id\": 24,\n            \"Name\": \"I G Petrochems\"\n        },\n        {\n            \"id\": 25,\n            \"Name\": \"Geojit Fin. Ser.\"\n        },\n        {\n            \"id\": 26,\n            \"Name\": \"Sasken Technol.\"\n        },\n        {\n            \"id\": 27,\n            \"Name\": \"Engineers India\"\n        },\n        {\n            \"id\": 28,\n            \"Name\": \"Petronet LNG\"\n        },\n        {\n            \"id\": 29,\n            \"Name\": \"Saksoft\"\n        },\n        {\n            \"id\": 30,\n            \"Name\": \"Polyplex Corpn\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
